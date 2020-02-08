@@ -16,11 +16,11 @@ import com.example.placapp.ui.game.hometeam.HomeTeamFragment
 import com.example.placapp.ui.score.ScoreActivity
 import kotlinx.android.synthetic.main.activity_game.*
 
-class GameActivity : AppCompatActivity() {
-
-    private var eventName = ""
-    private var homeTeam = ""
-    private var awayTeam = ""
+class GameActivity : AppCompatActivity(), AwayTeamFragment.AwayTeamSelectedListener {
+    override fun onAwayTeam(awayName: String) {
+        gameViewModel.awayTeam = awayName
+        showScoreActivity()
+    }
 
     private lateinit var gameViewModel: GameViewModel
 

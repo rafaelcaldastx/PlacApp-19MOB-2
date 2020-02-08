@@ -1,6 +1,7 @@
 package com.example.placapp.ui.game.awayteam
 
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,6 +15,29 @@ import com.example.placapp.ui.extensions.setupClearButtonWithAction
 import kotlinx.android.synthetic.main.fragment_away_team.*
 
 class AwayTeamFragment : Fragment() {
+
+    interface AwayTeamSelectedListener {
+        fun onAwayTeam(awayName: String)
+
+    }
+
+    private var listener: AwayTeamSelectedListener? = null
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is AwayTeamSelectedListener) {
+            listener = context
+        }
+    }
+
+  /*  companion object {
+
+        fun newInstance(homeTeam: String = "", eventName: String = "") : AwayTeamFragment {
+
+
+        }
+
+    }*/
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

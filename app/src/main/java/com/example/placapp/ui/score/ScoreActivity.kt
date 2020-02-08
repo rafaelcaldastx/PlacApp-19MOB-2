@@ -33,10 +33,10 @@ class ScoreActivity : AppCompatActivity() {
         btEndGame.setOnClickListener { finish() }
         btChronometer.setOnClickListener {
             if(myChronometer.isRunning) {
-                btChronometer.text = "Iniciar cronometro"
+                btChronometer.text = "Iniciar Jogo"
                 myChronometer.stop()
             } else {
-                btChronometer.text = "Pausar cronometro"
+                btChronometer.text = "Pausar Jogo"
                 myChronometer.start()
             }
         }
